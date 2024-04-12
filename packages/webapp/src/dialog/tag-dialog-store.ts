@@ -122,4 +122,4 @@ export const reducer = (state: TagDialogState, action: TagAction): TagDialogStat
   return state
 }
 
-export const useTagDialogStore = (partial : Partial<TagDialogState> = {}) => useReducer(reducer, {...initialState, ...partial})
+export const useDialogStore = (partial : Partial<TagDialogState> = {}) => useReducer(reducer, {...initialState, ...partial})

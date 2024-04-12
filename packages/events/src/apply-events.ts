@@ -30,17 +30,8 @@ const applyEventAction = <T extends Taggable>(data: T, action: EventAction): boo
   return changed;
 }
 
-const isSubIdsValid = (event: Event) => {
-  if(!event.subtargetCoords) return true;
-  if(event.subtargetCoords.length == event.targetIds.length) return true;
-  return false;
-}
-
 const isValidEvent = (event: Event) => {
-  return event.type == 'userAction' 
-        && event.targetIds?.length 
-        && event.actions?.length 
-        && isSubIdsValid(event)
+  return event.type == 'userAction' && event.targetIds?.length && event.actions?.length
 }
 
 const applyEventDate = (entry: Taggable, event: Event) => {
