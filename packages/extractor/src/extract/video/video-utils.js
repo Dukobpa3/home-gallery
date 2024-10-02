@@ -53,17 +53,17 @@ export function getFfmpegArgs(entry, options) {
 
   const defaultFfmpegArgs = [
     `-c:v ${ffmpegOptions.videoEncoder}`,
-    '-c:a aac',
-    `-r ${ffmpegOptions.frameRate}`,
-    `-vf scale=${ffmpegOptions.scale},format=yuv420p`,
-    `-preset ${ffmpegOptions.preset}`,
-    '-tune film',
-    `-profile:v ${ffmpegOptions.profile}`,
-    `-level:v ${typeof ffmpegOptions.level == 'number' ? ffmpegOptions.level.toFixed(1) : ffmpegOptions.level}`,
-    `-maxrate ${ffmpegOptions.maxVideoBitRate}k`,
-    `-bufsize ${2 * ffmpegOptions.maxVideoBitRate}k`,
-    '-movflags +faststart',
-    '-b:a 128k'
+    // '-c:a aac_vaapi',
+    // `-r ${ffmpegOptions.frameRate}`,
+    `-vf scale_vaapi=${ffmpegOptions.scale}`,
+    // `-preset ${ffmpegOptions.preset}`,
+    // '-tune film',
+    // `-profile:v ${ffmpegOptions.profile}`,
+    // `-level:v ${typeof ffmpegOptions.level == 'number' ? ffmpegOptions.level.toFixed(1) : ffmpegOptions.level}`,
+    // `-maxrate ${ffmpegOptions.maxVideoBitRate}k`,
+    // `-bufsize ${2 * ffmpegOptions.maxVideoBitRate}k`,
+    // '-movflags +faststart',
+    // '-b:a 128k'
   ]
 
   const ffmpegArgs = [

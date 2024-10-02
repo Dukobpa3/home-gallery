@@ -69,7 +69,7 @@ sources:
 #
 # Extractor settings
 #
-#extractor:
+extractor:
   # excludes:
   #   - *.xmp
   #   - *.svg
@@ -78,13 +78,13 @@ sources:
   #image:
   #  previewSizes: [1920, 1280, 800, 320, 128]
   #  previewQuality: 80
-  #video:
+  video:
   #  previewSize: 720 # used as preview size and preview filename
   #  ext: mp4 # used as target video container and preview filename
   #  scale: -2:'min(720,ih)' # overwrites previewSize. E.g. -2:'min(ih,max(720,min(1080,ih*.5)))' for 720p <= height*0.5 <= 1080p or height, if height < 720
   #  frameRate: 30
   #  maxVideoBitRate: 4000 # in KB
-  #  videoEncoder: libx264
+    videoEncoder: h264_vaapi # libx264
   #  preset: slow
   #  profile: baseline
   #  level: '3.0'

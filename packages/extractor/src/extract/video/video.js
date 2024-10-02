@@ -26,6 +26,7 @@ function convertVideo(entry, src, dst, ffmpegPath, ffprobePath, ffmpegArgs, cb) 
   command
     .on('error', cb)
     .on('end', cb)
+    .inputOptions(['-hwaccel vaapi', '-hwaccel_output_format vaapi'])
     .addOptions(ffmpegArgs)
     .output(dst)
     .on('start', commandLine => log.debug({ffmpegArgs}, `Start video conversion via ffmpeg command: ${commandLine}`))
